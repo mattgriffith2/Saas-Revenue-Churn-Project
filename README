@@ -1,0 +1,54 @@
+Overview
+
+This project is a Power BI dashboard built to analyze the performance of a SaaS (Software-as-a-Service) company. The goal was to create a clean, interactive, and executive-ready dashboard that provides insights into customer acquisition, churn, revenue, and overall customer health.
+The project demonstrates data modeling, cleaning, transformation, and visualization skills, with a focus on business-relevant KPIs and time intelligence calculations.
+
+
+Goals / Questions Answered
+
+The dashboard was designed to answer the following business questions:
+
+1. Growth Metrics
+
+  - How many accounts do we have in total, and how are they distributed across plan tiers?
+
+  - How many new accounts are added each month?
+
+  - What is the net growth after accounting for churn?
+
+2. Churn & Retention
+
+  - How many customers are churning each month?
+
+  - What is the monthly churn rate, and how is it trending over time?
+
+  - What are short-term (month-over-month) and medium-term (3-month rolling) churn trends?
+
+3. Revenue & Customer Health
+
+  - What is the Total Monthly Recurring Revenue (MRR), and how does it change by plan tier?
+
+  - How long do customers typically remain subscribed?
+
+  - How quickly are support tickets resolved?
+
+  - What is the average customer satisfaction score?
+
+The dashboard allows filtering by plan tier, industry, and other customer segments to understand performance at a more granular level.
+
+
+Dataset
+
+The dashboard was built using multiple CSV datasets representing SaaS operational data, including:
+
+    Accounts – Customer details, plan tiers, and churn flags
+
+    Subscriptions – Monthly subscription revenue and status
+
+    Feature Usage – Product usage data
+
+    Churn Events – Reasons for churn, refund amounts
+
+    Support Tickets – Customer support activity and satisfaction
+
+All data was cleaned, transformed, and joined into a fact table model to support both KPIs and trend analysis.
