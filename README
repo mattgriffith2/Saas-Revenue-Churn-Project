@@ -1,54 +1,133 @@
 Overview
 
-This project is a Power BI dashboard built to analyze the performance of a SaaS (Software-as-a-Service) company. The goal was to create a clean, interactive, and executive-ready dashboard that provides insights into customer acquisition, churn, revenue, and overall customer health.
-The project demonstrates data modeling, cleaning, transformation, and visualization skills, with a focus on business-relevant KPIs and time intelligence calculations.
+This project is an end-to-end analytics case study focused on understanding account growth, churn behavior, revenue quality, and customer support performance for a SaaS-style business.
+The goal was to simulate a real-world analytics workflow:
+
+  - Clean and model data using SQL
+
+  - Build a star-schema style data model
+
+  - Create an executive-ready Power BI dashboard
+
+  - Answer business questions decision-makers actually care about
 
 
-Goals / Questions Answered
+Business Questions Answered
 
-The dashboard was designed to answer the following business questions:
+This dashboard was built to answer questions such as:
 
-1. Growth Metrics
+  - How is the total account base changing over time?
 
-  - How many accounts do we have in total, and how are they distributed across plan tiers?
+  - What does churn look like month over month?
 
-  - How many new accounts are added each month?
+  - Which plan tiers and accounts drive the majority of revenue?
 
-  - What is the net growth after accounting for churn?
+  - How concentrated is revenue across customers?
 
-2. Churn & Retention
+  - How does customer support performance vary by plan tier?
 
-  - How many customers are churning each month?
-
-  - What is the monthly churn rate, and how is it trending over time?
-
-  - What are short-term (month-over-month) and medium-term (3-month rolling) churn trends?
-
-3. Revenue & Customer Health
-
-  - What is the Total Monthly Recurring Revenue (MRR), and how does it change by plan tier?
-
-  - How long do customers typically remain subscribed?
-
-  - How quickly are support tickets resolved?
-
-  - What is the average customer satisfaction score?
-
-The dashboard allows filtering by plan tier, industry, and other customer segments to understand performance at a more granular level.
+  - Are higher-value customers receiving better or worse support outcomes?
 
 
-Dataset
+Tools Used
 
-The dashboard was built using multiple CSV datasets representing SaaS operational data, including:
+Microsoft Excel - The original dataset was provided in Excel format and used as the initial raw data source.
 
-    Accounts – Customer details, plan tiers, and churn flags
+Azure (Data Ingestion & Storage) - Azure was used to ingest the raw Excel data and store it in a structured environment prior to analysis. 
+This step simulated a real-world cloud data pipeline where raw files are centralized, persisted, and prepared for downstream analytics.
 
-    Subscriptions – Monthly subscription revenue and status
+SQL Server / T-SQL - data cleaning, transformations, aggregations
 
-    Feature Usage – Product usage data
+Power BI — data modeling, DAX measures, dashboard design
 
-    Churn Events – Reasons for churn, refund amounts
+GitHub — project documentation and version control
 
-    Support Tickets – Customer support activity and satisfaction
 
-All data was cleaned, transformed, and joined into a fact table model to support both KPIs and trend analysis.
+Data Model Overview
+
+The model follows a fact + dimension style approach to support flexible analysis:
+
+  - Accounts fact table - account-level attributes and recurring revenue
+
+  - Monthly churn fact table - churned accounts aggregated by month
+
+  - Support fact table - ticket volume, resolution time, and satisfaction metrics
+
+  - Date / Month table - consistent time-based analysis across pages
+
+SQL was used for:
+
+  - Data cleaning
+
+  - Preparing fact tables for analysis
+
+Power BI (DAX) was used for:
+
+  - Dynamic KPIs (churn rate, rolling metrics)
+
+  - Revenue concentration analysis
+
+  - Interactive filtering and slicing
+
+
+Dashboard Pages
+
+Page 1 - Executive Overview
+
+KPIs designed for leadership:
+
+  - Total Accounts
+
+  - Churned Accounts
+
+  - Churn Rate
+
+  - Total MRR
+
+  - Average Subscription Duration
+
+  - Support Satisfaction & Resolution Metrics
+
+This page provides a fast snapshot of overall business health.
+
+Page 2 — Account Growth & Churn Trends
+
+Focused on customer movement over time:
+
+  - Total Accounts by Month and Plan Tier
+
+  - New Accounts vs Churned Accounts
+
+  - Net Account Growth
+
+  - Churn trends with time-based granularity
+
+This page answers questions such as “Are we growing sustainably?”
+
+Page 3 — Revenue Quality & Monetization
+
+  - Focused on where revenue actually comes from:
+
+  - Total MRR and Active Accounts
+
+  - Highest Revenue Plan Tier (dynamic KPI)
+
+  - Top 10% of Accounts by Revenue
+
+  - Revenue concentration insights
+
+This page highlights revenue dependency risk and monetization efficiency.
+
+Page 4 — Support & Customer Experience
+
+ Focused on operational performance:
+
+  - Ticket volume by priority
+
+  - Average resolution days
+
+  - Satisfaction scores
+
+  - Comparison across plan tiers
+
+This page connects customer value to customer experience.
